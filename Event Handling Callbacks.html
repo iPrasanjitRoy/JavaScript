@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Event Handling Callbacks</title>
+</head>
+
+<body>
+
+    <button id="myButton">Click Me</button>
+
+    <script>
+        function handleClickEvent(callback) {
+            const button = document.getElementById('myButton');
+            button.addEventListener('click', function () {
+                callback();
+            });
+        }
+
+        function handleButtonClick() {
+            console.log('Button Clicked!');
+        }
+
+        handleClickEvent(handleButtonClick);
+    </script>
+
+</body>
+
+</html>

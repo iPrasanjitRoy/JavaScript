@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Promise Example</title>
+</head>
+
+<body>
+    <div id="result"></div>
+
+    <script>
+        const promise = new Promise((resolve, reject) => {
+            const num = Math.random();
+            if (num >= 0.5) {
+                resolve("Promise is fulfilled!");
+            } else {
+                reject("Promise failed!");
+            }
+        });
+
+        function handleResolve(value) {
+            document.getElementById('result').innerText = value;
+        }
+
+        function handleReject(reason) {
+            document.getElementById('result').innerText = reason;
+        }
+
+        promise.then(handleResolve, handleReject);
+
+
+        /*
+        In Javascript Promises, The .Then() Method Is Used To Handle The Resolved (Fulfilled) State Of A Promise, 
+        And The .Catch() Method Is Used To Handle The Rejected State. 
+        However, You Can Use .Then() To Handle Both Resolved And Rejected States
+        */
+    </script>
+</body>
+
+</html>
